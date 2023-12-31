@@ -19,10 +19,7 @@ class Basic(commands.Cog):
         Store = args
         await ctx.message.delete()
         await ctx.send(f"**{Store}**")
-    
-    @commands.command()
-    async def hi(self,ctx):
-        await ctx.send("Hello There")
+
 
 def setup(bot):
     bot.add_cog(Basic(bot))
