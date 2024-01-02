@@ -20,6 +20,9 @@ class Basic(commands.Cog):
         await ctx.message.delete()
         await ctx.send(f"**{Store}**")
 
+    @commands.command()
+    async def python(self , ctx):
+        ctx.send("Under dev!")
 
 def setup(bot):
     bot.add_cog(Basic(bot))
