@@ -11,7 +11,6 @@ bot = commands.Bot(command_prefix='!',intents=intents)
 async def on_ready():
     print(f'Logged in as: {bot.user.name}')
 
-
 for fn in os.listdir("./cogs"):
     if fn.endswith(".py"):
         bot.load_extension(f"cogs.{fn[:-3]}")
@@ -22,7 +21,6 @@ async def load(ctx, cog: str):
         bot.load_extension(f"cogs.{cog}")
         await ctx.send(f"Loaded {cog}")
         
-@bot.command(name="unload")
 async def unload(ctx, cog: str):
     if ctx.message.author.id == int(os.getenv('Dev')):
         bot.unload_extension(f"cogs.{cog}")
@@ -30,4 +28,4 @@ async def unload(ctx, cog: str):
 
 if __name__ == "__main__":
     bot.run(Token)
-
+    

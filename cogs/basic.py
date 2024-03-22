@@ -9,7 +9,30 @@ class Basic(commands.Cog):
         try:
             Code = args
             await ctx.message.delete()
-            await ctx.send(f"```\n{Code}\n```")    
+            await ctx.send(f"```\n{Code}\n```")
+            await ctx.channel.send(f'Author: <@{ctx.author.id}>')    
+
+        except Exception:
+            return 
+    
+    @commands.command()
+    async def py(self,ctx,*,args:str):
+        try:
+            Code = args
+            await ctx.message.delete()
+            await ctx.send(f"```py\n{Code}\n```")
+            await ctx.channel.send(f'Author: <@{ctx.author.id}>')    
+
+        except Exception:
+            return False
+        
+    @commands.command()
+    async def js(self,ctx,*,args:str):
+        try:
+            Code = args
+            await ctx.message.delete()
+            await ctx.send(f"```js\n{Code}\n```")  
+            await ctx.channel.send(f'Author: <@{ctx.author.id}>')  
 
         except Exception:
             return False

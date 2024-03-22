@@ -7,7 +7,6 @@ class DATABASE(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-
     @commands.command(name="null")
     @commands.is_owner()
     async def null(self,ctx): 
@@ -58,6 +57,7 @@ class DATABASE(commands.Cog):
             await ctx.send(f"```\nID: {row[0]} Content: {row[1]}\n```")
 
         conn.close()
+
 
 def setup(bot):
     bot.add_cog(DATABASE(bot))
